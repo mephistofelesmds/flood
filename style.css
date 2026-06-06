@@ -132,7 +132,6 @@ nav a:hover, nav a.active {
 
 /* Заглушки текста */
 .placeholder-text {
-    font-family: cursive;
     font-size: 1.2rem;
     color: #666;
     border-left: 5px solid #ccc;
@@ -140,7 +139,6 @@ nav a:hover, nav a.active {
     margin: 15px 0;
 }
 
-/* --- Стиль для ссылок (Черный цвет) --- */
 a {
     color: #000000 !important;         /* Черный цвет */
     text-decoration: underline;        /* Подчеркивание (можешь убрать, если не нужно) */
@@ -153,4 +151,100 @@ a:hover {
 
 a:visited {
     color: #000000 !important;         /* Чтобы посещенные ссылки тоже были черными */
+}
+
+/* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ --- */
+
+/* Для экранов шириной меньше 768px (телефоны) */
+@media screen and (max-width: 768px) {
+    
+    /* Убираем отступы по бокам */
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    /* ШАПКА */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .avatar-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .site-title h1 {
+        font-size: 1.8rem; /* Уменьшаем заголовок */
+    }
+
+    .site-title span {
+        font-size: 1rem;
+    }
+
+    /* НАВИГАЦИЯ */
+    nav {
+        display: flex;
+        flex-wrap: wrap; /* Кнопки будут переноситься на новую строку */
+        justify-content: center;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        margin: 2px;
+        flex: 1 1 auto; /* Кнопки растягиваются по ширине */
+        min-width: 80px;
+        text-align: center;
+    }
+
+    /* КОНТЕНТ */
+    .content-area {
+        padding: 10px;
+    }
+
+    .content-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .placeholder-text {
+        font-size: 1rem;
+    }
+
+    /* КАРТИНКИ */
+    .img-wrapper {
+        width: 100%;
+        display: block;
+        margin: 10px 0;
+    }
+
+    .img-wrapper img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+}
+
+/* Для очень маленьких экранов (телефоны 320-480px) */
+@media screen and (max-width: 480px) {
+    .site-title h1 {
+        font-size: 1.4rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        min-width: 60px;
+    }
 }
