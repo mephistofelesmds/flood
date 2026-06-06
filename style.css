@@ -100,9 +100,16 @@ nav a {
     display: inline-block;
     transition: 0.3s;
     white-space: nowrap;
+    background-color: #666; /* Серый фон для неактивных кнопок */
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+nav a.active {
     background: #fff;
     color: #000;
     border-color: #000;
@@ -201,12 +208,12 @@ a:visited {
     }
 
     .site-title h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem; /* Увеличено с 1.6rem */
         letter-spacing: 3px;
     }
 
     .site-title span {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Увеличено с 0.9rem */
         letter-spacing: 6px;
         margin-top: 5px;
     }
@@ -218,10 +225,10 @@ a:visited {
     }
 
     nav a {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+        font-size: 1rem; /* Увеличено с 0.9rem */
+        padding: 10px 14px; /* Увеличено с 8px 12px */
         flex: 1 1 auto;
-        min-width: 80px;
+        min-width: 85px; /* Увеличено с 80px */
         max-width: 45%;
         text-align: center;
     }
@@ -233,11 +240,11 @@ a:visited {
     }
 
     .content-card h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem; /* Увеличено с 1.5rem */
     }
 
     .placeholder-text {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Увеличено с 1rem */
         padding-left: 12px;
     }
 
@@ -283,12 +290,12 @@ a:visited {
     }
 
     .site-title h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem; /* Увеличено с 1.3rem */
         letter-spacing: 2px;
     }
 
     .site-title span {
-        font-size: 0.8rem;
+        font-size: 0.9rem; /* Увеличено с 0.8rem */
         letter-spacing: 4px;
     }
 
@@ -298,18 +305,18 @@ a:visited {
     }
 
     nav a {
-        font-size: 0.8rem;
-        padding: 7px 10px;
-        min-width: 70px;
+        font-size: 0.9rem; /* Увеличено с 0.8rem */
+        padding: 8px 12px; /* Увеличено с 7px 10px */
+        min-width: 75px; /* Увеличено с 70px */
         max-width: 48%;
     }
 
     .content-card h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem; /* Увеличено с 1.3rem */
     }
 
     .placeholder-text {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Увеличено с 0.9rem */
     }
 
     .img-wrapper img {
