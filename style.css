@@ -17,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #333;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 /* ШАПКА */
@@ -51,6 +53,7 @@ header {
     overflow: hidden;
     border: 3px solid #2c2c2c;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    flex-shrink: 0;
 }
 
 .avatar-container img {
@@ -65,12 +68,14 @@ header {
     font-size: 2.5rem;
     letter-spacing: 5px;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 
 .site-title span {
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 10px;
+    display: block;
 }
 
 /* НАВИГАЦИЯ */
@@ -79,6 +84,10 @@ nav {
     padding: 15px;
     margin-bottom: 20px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 nav a {
@@ -89,8 +98,8 @@ nav a {
     border: 1px solid #555;
     padding: 8px 15px;
     display: inline-block;
-    margin: 3px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover, nav a.active {
@@ -111,6 +120,7 @@ nav a:hover, nav a.active {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 /* ШАБЛОН КАРТИНОК */
@@ -121,6 +131,7 @@ nav a:hover, nav a.active {
     padding: 10px;
     background: #fff;
     display: inline-block;
+    max-width: 100%;
 }
 
 .img-wrapper img {
@@ -128,6 +139,7 @@ nav a:hover, nav a.active {
     height: auto;
     filter: grayscale(80%);
     max-height: 400px;
+    object-fit: contain;
 }
 
 /* Заглушки текста */
@@ -137,20 +149,22 @@ nav a:hover, nav a.active {
     border-left: 5px solid #ccc;
     padding-left: 15px;
     margin: 15px 0;
+    line-height: 1.5;
 }
 
+/* ССЫЛКИ */
 a {
-    color: #000000 !important;         /* Черный цвет */
-    text-decoration: underline;        /* Подчеркивание (можешь убрать, если не нужно) */
+    color: #000000 !important;
+    text-decoration: underline;
 }
 
 a:hover {
-    color: #000000 !important;         /* При наведении тоже черный */
-    text-decoration: none;             /* При наведении подчеркивание исчезает (или оставь) */
+    color: #000000 !important;
+    text-decoration: none;
 }
 
 a:visited {
-    color: #000000 !important;         /* Чтобы посещенные ссылки тоже были черными */
+    color: #000000 !important;
 }
 
 /* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ --- */
@@ -158,25 +172,27 @@ a:visited {
 /* Для экранов шириной меньше 768px (телефоны) */
 @media screen and (max-width: 768px) {
     
-    /* Убираем отступы по бокам */
     body {
         padding: 10px;
     }
 
     .container {
-        padding: 10px;
+        padding: 15px;
     }
 
     /* ШАПКА */
     header {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
     }
 
     .logo-area {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        gap: 15px;
     }
 
     .avatar-container {
@@ -185,33 +201,35 @@ a:visited {
     }
 
     .site-title h1 {
-        font-size: 1.8rem; /* Уменьшаем заголовок */
+        font-size: 1.6rem;
+        letter-spacing: 3px;
     }
 
     .site-title span {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 6px;
+        margin-top: 5px;
     }
 
     /* НАВИГАЦИЯ */
     nav {
-        display: flex;
-        flex-wrap: wrap; /* Кнопки будут переноситься на новую строку */
-        justify-content: center;
-        padding: 10px;
+        padding: 12px 8px;
+        gap: 5px;
     }
 
     nav a {
         font-size: 0.9rem;
-        padding: 6px 12px;
-        margin: 2px;
-        flex: 1 1 auto; /* Кнопки растягиваются по ширине */
+        padding: 8px 12px;
+        flex: 1 1 auto;
         min-width: 80px;
+        max-width: 45%;
         text-align: center;
     }
 
     /* КОНТЕНТ */
     .content-area {
-        padding: 10px;
+        padding: 15px 5px;
+        min-height: auto;
     }
 
     .content-card h2 {
@@ -220,17 +238,19 @@ a:visited {
 
     .placeholder-text {
         font-size: 1rem;
+        padding-left: 12px;
     }
 
     /* КАРТИНКИ */
     .img-wrapper {
         width: 100%;
         display: block;
-        margin: 10px 0;
+        margin: 15px 0;
+        padding: 8px;
     }
 
     .img-wrapper img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         max-height: 300px;
     }
@@ -238,13 +258,61 @@ a:visited {
 
 /* Для очень маленьких экранов (телефоны 320-480px) */
 @media screen and (max-width: 480px) {
+    
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        gap: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo-area {
+        gap: 10px;
+    }
+
+    .avatar-container {
+        width: 65px;
+        height: 65px;
+    }
+
     .site-title h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    .site-title span {
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+    }
+
+    nav {
+        padding: 8px 5px;
+        gap: 4px;
     }
 
     nav a {
         font-size: 0.8rem;
-        padding: 5px 10px;
-        min-width: 60px;
+        padding: 7px 10px;
+        min-width: 70px;
+        max-width: 48%;
+    }
+
+    .content-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .placeholder-text {
+        font-size: 0.9rem;
+    }
+
+    .img-wrapper img {
+        max-height: 200px;
     }
 }
