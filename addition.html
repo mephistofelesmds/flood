@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Черти | Правила</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+    <title>Черти | Дополнение</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,31 +24,335 @@
 
     <nav>
         <a href="index.html">Админ состав</a>
-        <a href="rules.html" class="active">Правила</a>
+        <a href="rules.html">Правила</a>
         <a href="norm.html">Норма</a>
         <a href="roles.html">Роли</a>
         <a href="templates.html">Шаблон анкет</a>
         <a href="lore.html">Лор</a>
         <a href="world.html">О мире</a>
-        <a href="addition.html">Дополнение</a>
+        <a href="addition.html" class="active">Дополнение</a>
     </nav>
 
     <div class="content-area">
         <div class="content-card">
-            <h2>Правила Поведения</h2>
             
-            <div class="placeholder-text">*тут текст*</div>
-            
-            <div class="img-wrapper">
-                <!-- Сюда вставь ссылку на картинку из папки images -->
-                <!-- <img src="images/tvoia_kartinka.jpg"> -->
-                <div style="padding:20px; border:1px dashed #999; color:#999;">*тут картинка*</div>
+            <!-- Заголовок -->
+            <div class="world-header">
+                <div class="world-symbol">◈</div>
+                <h1>Дополнение</h1>
+                <div class="world-divider"></div>
             </div>
-            
-            <div class="placeholder-text">*тут еще текст*</div>
+
+            <!-- Как появляется способность -->
+            <div class="world-section" id="appearance">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Как появляется способность
+                </h2>
+                <p>Способность появляется в разном возрасте. У большинства — в детстве, от шести до двенадцати лет. У некоторых — в подростковый период, тринадцать-шестнадцать. Редко — позже. Появление раньше шести лет почти не встречается.</p>
+                <p>Первое появление происходит спонтанно. Способность материализуется в активном режиме — часто напуганная, дезориентированная. Она только что появилась и не понимает, где находится. Хозяин тоже напуган. Первый контакт важен: он задаёт тон дальнейшим отношениям.</p>
+                <p>Способность сразу знает имя хозяина. Хозяин имени способности не знает — она называет его сама или он придумывает.</p>
+                <p>Наследные способности АльтЗеркальных появляются иначе. Они приходят к ребёнку в момент рождения или в первые месяцы жизни. Часто выглядят старше хозяина. Могут помнить предыдущего носителя, но не всегда говорят об этом сразу.</p>
+            </div>
+
+            <!-- Связь: механика -->
+            <div class="world-section world-section--highlight" id="bond">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☽</span> Связь: механика
+                </h2>
+                <p>Связь — невидимая нить между хозяином и способностью. Не имеет физического выражения. Ощущается обеими сторонами как постоянное присутствие друг друга.</p>
+
+                <div class="world-dual">
+                    <div class="world-dual-card">
+                        <div class="world-dual-label">Что передаётся</div>
+                        <ul class="world-list world-list--tight">
+                            <li>Сильные эмоции (страх, ярость, радость, боль)</li>
+                            <li>Физическая боль (приглушённо)</li>
+                            <li>Местоположение (направление и расстояние)</li>
+                            <li>Состояние (усталость, бодрость, болезнь)</li>
+                        </ul>
+                    </div>
+                    <div class="world-dual-card">
+                        <div class="world-dual-label">Что не передаётся</div>
+                        <ul class="world-list world-list--tight">
+                            <li>Мысли</li>
+                            <li>Слова</li>
+                            <li>Конкретные образы</li>
+                            <li>Слабые эмоции</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="world-subsection">
+                    <h3>Дальность связи</h3>
+                    <p>Способность не может уходить дальше нескольких километров от хозяина. Точное расстояние индивидуально. При попытке уйти дальше связь натягивается и причиняет боль обеим сторонам. Если продолжать — связь может порваться. Смертельно для обоих.</p>
+                </div>
+
+                <div class="world-subsection">
+                    <h3>Повреждение связи</h3>
+                    <p>Связь можно повредить, но нельзя разорвать добровольно. Повреждения возникают при сильных эмоциональных потрясениях, длительном конфликте между хозяином и способностью, насильственном вмешательстве. Повреждённая связь делает переключение между режимами болезненным и нестабильным. Лечится временем и работой над отношениями.</p>
+                </div>
+            </div>
+
+            <!-- Астрал: устройство -->
+            <div class="world-section" id="astral-details">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Астрал: устройство
+                </h2>
+                <p>Астрал не просто город. У него есть своя логика.</p>
+
+                <div class="world-info-grid">
+                    <div class="world-info-card">
+                        <div class="world-info-label">Ландшафт</div>
+                        <p>Бесконечен, но имеет узнаваемые зоны. Центральная часть похожа на старый город — узкие улицы, площади, фонтаны. Дальше идут наслоения: промышленные районы, парки, пустоши. Чем дальше от центра, тем более размытым и странным становится ландшафт.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Обитатели</div>
+                        <p>Способности в спящем режиме и мёртвые способности. Живые взаимодействуют друг с другом, образуют компании, иногда враждуют. Мёртвые либо бесцельно бродят, либо сидят на одном месте.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Безликие сущности</div>
+                        <p>Мёртвые способности, потерявшие форму. Выглядят как тени, размытые силуэты, фигуры без лиц. Не агрессивны, но могут пугать. Некоторые сохраняют обрывки сознания — бормочут, повторяют движения. Опасны только в группах, если потревожить.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Сохранные</div>
+                        <p>Мёртвые способности, сохранившие разум и облик. Редки. Живут в Астрале как отшельники или собираются в подобия общин. Помнят своих хозяев. Могут рассказывать о прошлом, но неохотно.</p>
+                    </div>
+                </div>
+
+                <p class="world-note">Астрал не влияет на реальный мир напрямую. Исключение — артефакты, которые способности иногда приносят. Как это работает, неизвестно. Сами способности объяснить не могут: «просто беру и выношу».</p>
+            </div>
+
+            <!-- Артефакты Астрала -->
+            <div class="world-section" id="artifacts">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Артефакты Астрала
+                </h2>
+
+                <div class="world-info-grid world-info-grid--three">
+                    <div class="world-info-card">
+                        <div class="world-info-label">Как выглядят</div>
+                        <p>Обычные предметы: камни, украшения, посуда, ткани, книги. От обычных вещей отличаются свечением, изменённой температурой, необычной текстурой. Некоторые меняют форму при прикосновении.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Свойства</div>
+                        <p>Непредсказуемы. Один греет руки, другой вызывает спокойствие, третий продлевает активный режим способности. Полезные и опасные свойства редки. Большинство артефактов нейтральны.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Происхождение</div>
+                        <p>Сами способности не знают, откуда в Астрале предметы. Теории: материализованные воспоминания, остатки умерших способностей, части самого Астрала.</p>
+                    </div>
+                </div>
+
+                <div class="world-subsection">
+                    <h3>Торговля</h3>
+                    <p>Сосредоточена в Плавучем Квартале Нагисо. Цена зависит от редкости и свойств. Артефакт без явных свойств стоит как хороший ужин. Артефакт с полезным свойством — как месячная зарплата. Артефакт с уникальным свойством — бесценен.</p>
+                </div>
+            </div>
+
+            <!-- Безликие: жизнь без способности -->
+            <div class="world-section" id="faceless-life">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Безликие: жизнь без способности
+                </h2>
+
+                <div class="world-timeline">
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker">1</div>
+                        <div class="world-timeline-content">
+                            <strong>Как становятся Безликими.</strong> Способность умирает по разным причинам: физическое уничтожение, повреждение связи, аномалия в Астрале. Смерть способности — редкость, но случается. Хозяин чувствует момент разрыва как резкую боль и пустоту.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker">2</div>
+                        <div class="world-timeline-content">
+                            <strong>Сразу после потери.</strong> Первые дни — шок. Хозяин не верит, зовёт способность, ждёт ответа. Связи нет. Пустота на месте, где всегда было присутствие. Многие впадают в апатию, не едят, не спят.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker">3</div>
+                        <div class="world-timeline-content">
+                            <strong>Месяцы после потери.</strong> Привыкание. Пустота становится фоном. Сломленные ищут, чем заполнить отсутствие: работа, отношения, алкоголь, помощь другим Безликим.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker">4</div>
+                        <div class="world-timeline-content">
+                            <strong>Годы после потери.</strong> Становление Пустым. Пустота больше не болит. Бывшая связь вспоминается как старая рана — затянулась, но шрам остался. Пустые не хотят новой связи, даже если бы это было возможно.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="world-subsection">
+                    <h3>Отношение общества</h3>
+                    <p>Неофициальная дискриминация. Безликим сложнее устроиться на работу, особенно связанную с эсперами. Их сторонятся в общественных местах. Причина: напоминание о том, что связь можно потерять. Никто не хочет думать об этом.</p>
+                </div>
+
+                <div class="world-subsection">
+                    <h3>Сообщества Безликих</h3>
+                    <p>В крупных городах есть неформальные группы поддержки. В Кайгэне — клуб в подвале чайного дома. В Нагисо — баржа на окраине Плавучего Квартала. В Кадзэхе — заброшенный цех. Безликие собираются, делятся опытом, помогают новым.</p>
+                </div>
+            </div>
+
+            <!-- Напряжение между группами -->
+            <div class="world-section" id="tension">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Напряжение между группами: бытовые примеры
+                </h2>
+
+                <div class="world-tension-grid">
+                    <div class="world-tension-card">
+                        <div class="world-tension-icon">⚒</div>
+                        <h3>Работа</h3>
+                        <p>Зеркальный начальник может не взять АльтЗеркального на работу, даже если тот подходит. Формальная причина найдётся. АльтЗеркальный коллектив может не принять Зеркального — будут шутить за спиной. Безликого не возьмут почти никуда, кроме тяжёлой работы.</p>
+                    </div>
+                    <div class="world-tension-card">
+                        <div class="world-tension-icon">☕</div>
+                        <h3>Заведения</h3>
+                        <p>Есть чайные и рестораны, куда пускают только Зеркальных. Есть места для АльтЗеркальных. Есть смешанные. Безликим вход часто закрыт негласно — «мест нет», «закрыто на спецобслуживание».</p>
+                    </div>
+                    <div class="world-tension-card">
+                        <div class="world-tension-icon">❦</div>
+                        <h3>Отношения</h3>
+                        <p>Пары между разными группами редки. Зеркальный с АльтЗеркальным — вызов для обоих кругов общения. С Безликим — почти табу. Способности в таких парах часто сближаются быстрее хозяев или наоборот — враждуют сильнее.</p>
+                    </div>
+                    <div class="world-tension-card">
+                        <div class="world-tension-icon">☙</div>
+                        <h3>Улица</h3>
+                        <p>Прямые столкновения редки, но словесные перепалки случаются. Брошенное слово, косой взгляд, неответ на приветствие. До драк доходит в районах попроще — портовых, промышленных. В центре Кайгэна такого меньше.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Монастырь Тихой Связи и Институт Связи -->
+            <div class="world-dual">
+                <div class="world-dual-card">
+                    <div class="world-dual-label">Монастырь Тихой Связи</div>
+                    <p class="world-note">Сидзури</p>
+                    <p>Открыт для всех эсперов, независимо от группы. Помогает старым эсперам, чья связь угасает от возраста. Способности тоже стареют и со временем не могут держаться в реальном мире.</p>
+                    <p>Эспер живёт в монастыре от нескольких недель до нескольких месяцев. Монахи проводят беседы, медитации, ритуалы прощания. Никакой магии — только психологическая помощь.</p>
+                    <p>Большинство эсперов уходят из монастыря Безликими, но умиротворёнными. Способность уходит в Астрал навсегда. Связь обрывается мягко, без боли.</p>
+                    <p class="world-note">Монастырь существует на пожертвования и государственные дотации. Проживание бесплатное.</p>
+                </div>
+                <div class="world-dual-card">
+                    <div class="world-dual-label">Институт Связи</div>
+                    <p class="world-note">Кадзэха</p>
+                    <p>Государственное научное учреждение. Изучает природу связи между хозяином и способностью: как она работает, можно ли её измерить, усилить, восстановить.</p>
+                    <p>Методы: приборы для измерения связи, опросы эсперов, эксперименты с добровольцами. Работают учёные, инженеры, врачи. Много эсперов среди сотрудников.</p>
+                    <p>Результаты скромные. Связь измерить не удаётся. Усилить — только временно и с побочными эффектами. Восстановить утерянную связь — невозможно.</p>
+                    <p class="world-note">Репутация неоднозначная. Одни считают исследования полезными, другие — вмешательством в природу, третьи — пустой тратой денег.</p>
+                </div>
+            </div>
+
+            <!-- Роэн -->
+            <div class="world-section world-section--mystery" id="roen">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☽</span> Роэн: что известно
+                </h2>
+                <p>Официально города не существует. Неофициально — слухи ходят по всей Курохе.</p>
+                
+                <div class="world-info-grid world-info-grid--three">
+                    <div class="world-info-card">
+                        <div class="world-info-label">Как попасть</div>
+                        <p>Западный горный хребет. Нужно идти через перевал. Тропа не обозначена. Говорят, она сама ведёт тех, кому нужно. Остальные плутают и возвращаются ни с чем.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Что внутри</div>
+                        <p>Способности всегда в активном режиме и не устают. Хозяева и способности живут на равных. Безликие могут видеть тени своих бывших способностей. Город выглядит как старый квартал, но планировка меняется.</p>
+                    </div>
+                    <div class="world-info-card">
+                        <div class="world-info-label">Кто там живёт</div>
+                        <p>Отщепенцы, беглецы, слишком сильные эсперы, которым нет места в обществе. Безликие, не желающие мириться с обычной жизнью. Способности, потерявшие хозяев, но сохранившие разум.</p>
+                    </div>
+                </div>
+
+                <p class="world-note">Государство отрицает существование Роэна. Но некоторые клянутся, что были там. Доказательств нет.</p>
+            </div>
+
+            <!-- Мелкие детали быта -->
+            <div class="world-section" id="everyday">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Мелкие детали быта
+                </h2>
+
+                <div class="world-details-grid">
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Едят ли способности?</span>
+                        <span class="world-detail-a">Да, но им не обязательно. Могут есть и пить для удовольствия, могут не есть неделями без вреда.</span>
+                    </div>
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Спят ли способности?</span>
+                        <span class="world-detail-a">Да, в Астрале. В реальном мире могут не спать, но предпочитают отдыхать вместе с хозяином.</span>
+                    </div>
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Болеют ли способности?</span>
+                        <span class="world-detail-a">Нет, в человеческом понимании. Но могут «выгорать» — терять силы при долгом нахождении в активном режиме. Отдых в Астрале восстанавливает.</span>
+                    </div>
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Язык способностей?</span>
+                        <span class="world-detail-a">Говорят на том же языке, что и хозяин. В Астрале способности понимают друг друга без слов.</span>
+                    </div>
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Одежда способностей?</span>
+                        <span class="world-detail-a">Появляются в той одежде, которую «помнят» из первого появления. Менять могут, но не всегда хотят.</span>
+                    </div>
+                    <div class="world-detail-item">
+                        <span class="world-detail-q">Размножение способностей?</span>
+                        <span class="world-detail-a">Не размножаются и не создают семьи в человеческом смысле. Но могут формировать глубокие привязанности друг к другу.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Хронология -->
+            <div class="world-section" id="timeline">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">☙</span> Хронология страны
+                </h2>
+                <p class="world-note">Точных дат нет, только примерный порядок событий.</p>
+
+                <div class="world-timeline">
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker world-timeline-marker--dark">I</div>
+                        <div class="world-timeline-content">
+                            <strong>Давнее прошлое.</strong> Основание Курохи. Первые записи об эсперах. Создание Зала Имён.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker world-timeline-marker--dark">II</div>
+                        <div class="world-timeline-content">
+                            <strong>Несколько веков назад.</strong> Формирование деления на Зеркальных и АльтЗеркальных. Первые конфликты.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker world-timeline-marker--dark">III</div>
+                        <div class="world-timeline-content">
+                            <strong>Около века назад.</strong> Основание Института Связи. Начало научного изучения способностей.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker world-timeline-marker--dark">IV</div>
+                        <div class="world-timeline-content">
+                            <strong>Несколько десятилетий назад.</strong> Появление первых сообществ Безликих. Принятие закона о правах Безликих.
+                        </div>
+                    </div>
+                    <div class="world-timeline-item">
+                        <div class="world-timeline-marker world-timeline-marker--dark">V</div>
+                        <div class="world-timeline-content">
+                            <strong>Настоящее время.</strong> Напряжение между группами сохраняется. Институт Связи продолжает работу. Роэн остаётся легендой.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Футер -->
+            <div class="world-footer">
+                <div class="world-divider"></div>
+                <div class="world-symbol">◈</div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

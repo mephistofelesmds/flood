@@ -6,12 +6,11 @@
 }
 
 body {
-    background-color: #f4f4f4;
-    /* Эффект шума/газеты */
+    background-color: #0a0a0a;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-        repeating-linear-gradient(45deg, #ccc 0px, #ccc 1px, transparent 1px, transparent 2px);
-    color: #2c2c2c;
+        radial-gradient(ellipse at center, rgba(30,30,30,0.7) 0%, #0a0a0a 70%),
+        url("data:image/svg+xml,%3Csvg width='4' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='0.5' fill='%23333'/%3E%3C/svg%3E");
+    color: #ccc;
     font-family: 'Cormorant Garamond', serif;
     min-height: 100vh;
     display: flex;
@@ -23,9 +22,10 @@ body {
 .container {
     max-width: 1000px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #333;
+    background: rgba(0, 0, 0, 1);
+    border: 2px solid #333;
     padding: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
     overflow-x: hidden;
 }
 
@@ -34,10 +34,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px double #333;
+    border-bottom: 2px solid #333;
     padding-bottom: 20px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #555;
 }
 
 .logo-area {
@@ -51,8 +62,8 @@ header {
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #2c2c2c;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    border: 2px solid #555;
+    box-shadow: 0 0 15px rgba(255,255,255,0.05);
     flex-shrink: 0;
 }
 
@@ -60,7 +71,6 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) contrast(1.2);
 }
 
 .site-title h1 {
@@ -68,6 +78,8 @@ header {
     font-size: 2.5rem;
     letter-spacing: 5px;
     text-transform: uppercase;
+    color: #ddd;
+    text-shadow: 2px 2px 0px #000, 0 0 10px rgba(255,255,255,0.1);
     word-wrap: break-word;
 }
 
@@ -75,12 +87,14 @@ header {
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 10px;
+    color: #888;
     display: block;
 }
 
 /* НАВИГАЦИЯ */
 nav {
-    background: #1a1a1a;
+    background: #111;
+    border: 1px solid #333;
     padding: 15px;
     margin-bottom: 20px;
     text-align: center;
@@ -88,31 +102,34 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 nav a {
-    color: #ddd;
+    color: #999;
     text-decoration: none;
     font-family: 'Special Elite', cursive;
     font-size: 1.1rem;
-    border: 1px solid #555;
+    border: 1px solid #444;
     padding: 8px 15px;
     display: inline-block;
     transition: 0.3s;
     white-space: nowrap;
-    background-color: #666; /* Серый фон для неактивных кнопок */
+    background-color: #1a1a1a;
 }
 
 nav a:hover {
-    background: #fff;
-    color: #000;
-    border-color: #000;
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
 nav a.active {
-    background: #fff;
-    color: #000;
-    border-color: #000;
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.15);
 }
 
 /* КОНТЕНТ */
@@ -124,9 +141,11 @@ nav a.active {
 .content-card h2 {
     font-family: 'Special Elite', cursive;
     font-size: 2rem;
-    border-bottom: 2px solid #333;
+    color: #ddd;
+    border-bottom: 2px solid #444;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 0px #000;
     word-wrap: break-word;
 }
 
@@ -134,17 +153,18 @@ nav a.active {
 .img-wrapper {
     margin: 20px 0;
     text-align: center;
-    border: 1px solid #333;
+    border: 1px solid #444;
     padding: 10px;
-    background: #fff;
+    background: #111;
     display: inline-block;
     max-width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .img-wrapper img {
     max-width: 100%;
     height: auto;
-    filter: grayscale(80%);
+    filter: grayscale(100%) contrast(1.2) brightness(0.9);
     max-height: 400px;
     object-fit: contain;
 }
@@ -152,8 +172,8 @@ nav a.active {
 /* Заглушки текста */
 .placeholder-text {
     font-size: 1.2rem;
-    color: #666;
-    border-left: 5px solid #ccc;
+    color: #bbb;
+    border-left: 3px solid #555;
     padding-left: 15px;
     margin: 15px 0;
     line-height: 1.5;
@@ -161,22 +181,22 @@ nav a.active {
 
 /* ССЫЛКИ */
 a {
-    color: #000000 !important;
+    color: #ccc !important;
     text-decoration: underline;
+    transition: 0.2s;
 }
 
 a:hover {
-    color: #000000 !important;
+    color: #fff !important;
     text-decoration: none;
 }
 
 a:visited {
-    color: #000000 !important;
+    color: #aaa !important;
 }
 
 /* --- АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ --- */
 
-/* Для экранов шириной меньше 768px (телефоны) */
 @media screen and (max-width: 768px) {
     
     body {
@@ -185,9 +205,9 @@ a:visited {
 
     .container {
         padding: 15px;
+        border-width: 1px;
     }
 
-    /* ШАПКА */
     header {
         flex-direction: column;
         text-align: center;
@@ -208,47 +228,44 @@ a:visited {
     }
 
     .site-title h1 {
-        font-size: 1.8rem; /* Увеличено с 1.6rem */
+        font-size: 1.8rem;
         letter-spacing: 3px;
     }
 
     .site-title span {
-        font-size: 1rem; /* Увеличено с 0.9rem */
+        font-size: 1rem;
         letter-spacing: 6px;
         margin-top: 5px;
     }
 
-    /* НАВИГАЦИЯ */
     nav {
         padding: 12px 8px;
         gap: 5px;
     }
 
     nav a {
-        font-size: 1rem; /* Увеличено с 0.9rem */
-        padding: 10px 14px; /* Увеличено с 8px 12px */
+        font-size: 1rem;
+        padding: 10px 14px;
         flex: 1 1 auto;
-        min-width: 85px; /* Увеличено с 80px */
+        min-width: 85px;
         max-width: 45%;
         text-align: center;
     }
 
-    /* КОНТЕНТ */
     .content-area {
         padding: 15px 5px;
         min-height: auto;
     }
 
     .content-card h2 {
-        font-size: 1.6rem; /* Увеличено с 1.5rem */
+        font-size: 1.6rem;
     }
 
     .placeholder-text {
-        font-size: 1.1rem; /* Увеличено с 1rem */
+        font-size: 1.1rem;
         padding-left: 12px;
     }
 
-    /* КАРТИНКИ */
     .img-wrapper {
         width: 100%;
         display: block;
@@ -263,7 +280,6 @@ a:visited {
     }
 }
 
-/* Для очень маленьких экранов (телефоны 320-480px) */
 @media screen and (max-width: 480px) {
     
     body {
@@ -290,12 +306,12 @@ a:visited {
     }
 
     .site-title h1 {
-        font-size: 1.5rem; /* Увеличено с 1.3rem */
+        font-size: 1.5rem;
         letter-spacing: 2px;
     }
 
     .site-title span {
-        font-size: 0.9rem; /* Увеличено с 0.8rem */
+        font-size: 0.9rem;
         letter-spacing: 4px;
     }
 
@@ -305,21 +321,1544 @@ a:visited {
     }
 
     nav a {
-        font-size: 0.9rem; /* Увеличено с 0.8rem */
-        padding: 8px 12px; /* Увеличено с 7px 10px */
-        min-width: 75px; /* Увеличено с 70px */
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        min-width: 75px;
         max-width: 48%;
     }
 
     .content-card h2 {
-        font-size: 1.4rem; /* Увеличено с 1.3rem */
+        font-size: 1.4rem;
     }
 
     .placeholder-text {
-        font-size: 1rem; /* Увеличено с 0.9rem */
+        font-size: 1rem;
     }
 
     .img-wrapper img {
         max-height: 200px;
+    }
+}
+
+/* ========== СТИЛИ ДЛЯ РОЛЕЙ ========== */
+
+/* Заголовок фракции */
+.faction-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.3rem;
+    color: #ddd;
+    margin: 25px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #444;
+}
+
+/* Список ролей */
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+/* Одна строка роли */
+.role-item {
+    font-size: 1.1rem;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+}
+
+/* Иконка статуса */
+.status {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    margin-left: 5px;
+}
+
+/* Свободно — нет картинки (пусто) */
+.status-free {
+    background-image: none;
+}
+
+/* Занято */
+.status-taken {
+    background-image: url('images/status-taken.png');
+}
+
+/* Бронь */
+.status-reserved {
+    background-image: url('images/status-reserved.png');
+}
+
+/* Ищем активно */
+.status-searching {
+    background-image: url('images/status-searching.png');
+}
+
+/* Адаптация для телефонов */
+@media screen and (max-width: 768px) {
+    .faction-title {
+        font-size: 1.1rem;
+    }
+    
+    .role-item {
+        font-size: 1rem;
+    }
+    
+    .status {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .faction-title {
+        font-size: 1rem;
+    }
+    
+    .role-item {
+        font-size: 0.9rem;
+    }
+    
+    .status {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ========== ЛОР ========== */
+
+.lore-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.lore-header .lore-symbol {
+    font-size: 1.5rem;
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+}
+
+.lore-header h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    color: #ddd;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    text-shadow: 2px 2px 0px #000, 0 0 20px rgba(255,255,255,0.08);
+}
+
+.lore-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #777;
+    letter-spacing: 6px;
+    text-transform: lowercase;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.lore-divider {
+    width: 80px;
+    height: 2px;
+    background: #444;
+    margin: 0 auto;
+}
+
+/* Секция */
+.lore-section {
+    margin: 20px 0;
+    padding: 10px 10px 10px 45px;
+    position: relative;
+    border-left: 1px solid #333;
+}
+
+.lore-section p {
+    font-size: 1.1rem;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.lore-section p:last-child {
+    margin-bottom: 0;
+}
+
+.lore-section-icon {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Разделитель секций */
+.lore-section-divider {
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 3px;
+    margin: 30px 0 15px 0;
+    text-transform: uppercase;
+}
+
+.lore-section-divider span {
+    color: #666;
+    margin: 0 8px;
+}
+
+.lore-section-intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lore-section-intro p {
+    font-size: 1rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* Группа */
+.lore-group {
+    margin: 25px 0;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.008);
+}
+
+.lore-group-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.012);
+}
+
+.lore-group-num {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.6rem;
+    color: #666;
+    min-width: 35px;
+    text-align: center;
+}
+
+.lore-group-name {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.3rem;
+    color: #ddd;
+    letter-spacing: 2px;
+}
+
+.lore-group-body {
+    padding: 15px 18px;
+}
+
+.lore-group-body > p {
+    font-size: 1.05rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Позиция и взгляд */
+.lore-stance {
+    margin: 12px 0;
+    padding-left: 12px;
+    border-left: 2px solid #333;
+}
+
+.lore-stance-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.85rem;
+    color: #999;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.lore-stance p {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.lore-view-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.lore-view-list li {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.lore-view-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #555;
+}
+
+.lore-view-list li span {
+    color: #ccc;
+    font-weight: 700;
+}
+
+/* Подтипы Безликих */
+.lore-subtypes {
+    display: flex;
+    gap: 15px;
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
+.lore-subtype {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.008);
+}
+
+.lore-subtype-name {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: #ddd;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.lore-subtype p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Таблица */
+.lore-table-wrapper {
+    overflow-x: auto;
+    margin: 15px 0 25px 0;
+}
+
+.lore-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.lore-table th {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    color: #ddd;
+    letter-spacing: 1px;
+    padding: 10px 12px;
+    border: 1px solid #333;
+    background: rgba(255,255,255,0.015);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.lore-table td {
+    padding: 10px 12px;
+    border: 1px solid #2a2a2a;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.lore-table-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    color: #ddd !important;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.008);
+    text-transform: uppercase;
+}
+
+/* Конфликты */
+.lore-conflicts {
+    margin: 15px 0 25px 0;
+}
+
+.lore-conflict {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+}
+
+.lore-conflict:last-child {
+    margin-bottom: 0;
+}
+
+.lore-conflict-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.95rem;
+    color: #ddd;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.lore-conflict p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Сюжетные моменты */
+.lore-plot-points {
+    margin: 10px 0 25px 0;
+}
+
+.lore-plot-points > p {
+    font-size: 1rem;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.lore-plot-points ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lore-plot-points li {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.lore-plot-points li::before {
+    content: '☙';
+    position: absolute;
+    left: 0;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Закрывающая секция */
+.lore-section--closing {
+    margin: 25px 0;
+    padding: 15px 15px 15px 45px;
+    position: relative;
+    border-left: 1px solid #444;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.lore-section--closing p {
+    font-size: 1.1rem;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.lore-section--closing p:last-child {
+    margin-bottom: 0;
+}
+
+/* Выделение */
+.lore-highlight {
+    color: #ddd;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Финальная строка */
+.lore-final {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.95rem !important;
+    color: #999 !important;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 12px !important;
+    font-weight: 300 !important;
+}
+
+/* Футер */
+.lore-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.lore-footer .lore-symbol {
+    font-size: 1.3rem;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .lore-header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+    }
+
+    .lore-section,
+    .lore-section--closing {
+        padding: 12px 10px 12px 35px;
+    }
+
+    .lore-group-body {
+        padding: 12px;
+    }
+
+    .lore-subtypes {
+        flex-direction: column;
+    }
+
+    .lore-subtype {
+        min-width: auto;
+    }
+
+    .lore-table {
+        font-size: 0.8rem;
+    }
+
+    .lore-table th,
+    .lore-table td {
+        padding: 8px 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .lore-header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+    }
+
+    .lore-subtitle {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+
+    .lore-group-name {
+        font-size: 1.1rem;
+    }
+
+    .lore-section,
+    .lore-section--closing {
+        padding: 10px 8px 10px 30px;
+    }
+
+    .lore-section p,
+    .lore-section--closing p {
+        font-size: 0.95rem;
+    }
+
+    .lore-table {
+        font-size: 0.7rem;
+    }
+
+    .lore-table th,
+    .lore-table td {
+        padding: 6px 5px;
+    }
+}
+
+
+/* ========== О МИРЕ ========== */
+
+.world-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.world-header .world-symbol {
+    font-size: 1.5rem;
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+}
+
+.world-header h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 2.5rem;
+    color: #ddd;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 0px #000, 0 0 20px rgba(255,255,255,0.08);
+}
+
+.world-divider {
+    width: 60px;
+    height: 2px;
+    background: #444;
+    margin: 15px auto 0 auto;
+}
+
+/* Секции */
+.world-section {
+    margin: 30px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.world-section:last-of-type {
+    border-bottom: none;
+}
+
+.world-section--highlight {
+    background: rgba(255,255,255,0.012);
+    border: 1px solid #2a2a2a;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.world-section-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.3rem;
+    color: #ddd;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.world-section-icon {
+    color: #666;
+    font-size: 1rem;
+}
+
+.world-section p {
+    font-size: 1.05rem;
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.world-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Подсекция */
+.world-subsection {
+    margin: 15px 0;
+}
+
+.world-subsection h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.world-list {
+    list-style: none;
+    padding: 0;
+}
+
+.world-list li {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.world-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #555;
+}
+
+.world-list li span {
+    color: #ccc;
+    font-weight: 700;
+}
+
+.world-note {
+    font-size: 0.9rem !important;
+    color: #777 !important;
+    font-style: italic;
+    margin-top: 8px !important;
+}
+
+/* Сетка */
+.world-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.world-info-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.world-info-card {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid #2a2a2a;
+    padding: 12px 14px;
+}
+
+.world-info-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    color: #ddd;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.world-info-card p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Две карточки */
+.world-dual {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.world-dual-card {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid #2a2a2a;
+    padding: 14px;
+}
+
+.world-dual-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.85rem;
+    color: #ddd;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.world-dual-card p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Законы */
+.world-law-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.world-law-item {
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+    align-items: flex-start;
+}
+
+.world-law-num {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.4rem;
+    color: #666;
+    min-width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    line-height: 1.2;
+}
+
+.world-law-content {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.world-law-content strong {
+    color: #ddd;
+    font-weight: 700;
+}
+
+/* Города */
+.world-city {
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+}
+
+.world-city--mystery {
+    border-color: #333;
+    background: rgba(255,255,255,0.012);
+}
+
+.world-city-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.world-city-num {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.world-city-header h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    color: #ddd;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.world-city-badge {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid #444;
+    padding: 2px 8px;
+}
+
+.world-city-badge--mystery {
+    color: #999;
+    border-color: #555;
+}
+
+.world-city-meta {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.world-city p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.world-city strong {
+    color: #ddd;
+    font-weight: 700;
+}
+
+/* Карта */
+.world-map-placeholder {
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px dashed #333;
+    margin: 15px 0;
+    background: rgba(255,255,255,0.006);
+}
+
+.world-map-icon {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.world-map-placeholder p {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+/* Футер */
+.world-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.world-footer .world-symbol {
+    font-size: 1.3rem;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .world-header h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .world-section-title {
+        font-size: 1.1rem;
+    }
+
+    .world-info-grid,
+    .world-info-grid--three {
+        grid-template-columns: 1fr;
+    }
+
+    .world-dual {
+        grid-template-columns: 1fr;
+    }
+
+    .world-law-item {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .world-law-num {
+        font-size: 1.2rem;
+    }
+
+    .world-city {
+        padding: 14px;
+    }
+
+    .world-city-header {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .world-header h1 {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+    }
+
+    .world-section--highlight {
+        padding: 15px;
+    }
+
+    .world-section p {
+        font-size: 0.95rem;
+    }
+
+    .world-city p {
+        font-size: 0.9rem;
+    }
+
+    .world-map-placeholder {
+        padding: 40px 15px;
+    }
+}
+
+/* Карта */
+.world-map-container {
+    margin: 15px 0;
+    border: 1px solid #2a2a2a;
+    background: #0a0a0a;
+    overflow: hidden;
+}
+
+.world-map-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Адаптация карты */
+@media screen and (max-width: 768px) {
+    .world-map-container {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .world-map-container {
+        margin: 8px 0;
+    }
+}
+
+/* ========== ДОПОЛНЕНИЕ (доп. стили) ========== */
+
+/* Таймлайн */
+.world-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 15px 0;
+    border-left: 1px solid #333;
+    padding-left: 20px;
+}
+
+.world-timeline-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    position: relative;
+    align-items: flex-start;
+}
+
+.world-timeline-marker {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    color: #888;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+    background: #111;
+    border: 1px solid #333;
+    padding: 2px 0;
+    margin-left: -35px;
+}
+
+.world-timeline-marker--dark {
+    color: #666;
+    background: #0d0d0d;
+}
+
+.world-timeline-content {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.world-timeline-content strong {
+    color: #ddd;
+    font-weight: 700;
+}
+
+/* Карточки напряжения */
+.world-tension-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.world-tension-card {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid #2a2a2a;
+    padding: 15px;
+}
+
+.world-tension-icon {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.world-tension-card h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.95rem;
+    color: #ddd;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.world-tension-card p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.6;
+}
+
+/* Детали быта */
+.world-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.world-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+}
+
+.world-detail-q {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    color: #ddd;
+    letter-spacing: 1px;
+}
+
+.world-detail-a {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Секция Роэн */
+.world-section--mystery {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid #2a2a2a;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+/* Плотный список */
+.world-list--tight {
+    margin: 5px 0;
+}
+
+.world-list--tight li {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    color: #999;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .world-tension-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .world-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .world-timeline {
+        padding-left: 15px;
+    }
+
+    .world-timeline-marker {
+        margin-left: -27px;
+        font-size: 1rem;
+        min-width: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .world-section--mystery {
+        padding: 15px;
+    }
+
+    .world-tension-card {
+        padding: 12px;
+    }
+}
+
+
+/* ========== НОРМА ========== */
+
+.norm-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.norm-card {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid #2a2a2a;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.norm-card-icon {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    pointer-events: none;
+}
+
+.norm-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.norm-card-label {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+    color: #ddd;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.norm-card-period {
+    font-size: 0.8rem;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.norm-card-value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 15px 20px;
+    border-top: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+    background: rgba(255,255,255,0.01);
+    margin: 15px 0;
+}
+
+.norm-number {
+    font-family: 'Special Elite', cursive;
+    font-size: 4rem;
+    color: #ddd;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255,255,255,0.06);
+}
+
+.norm-unit {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #888;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    font-weight: 300;
+}
+
+.norm-card-desc {
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.norm-card-desc p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.norm-card-footer {
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.008);
+    border-top: 1px solid #1f1f1f;
+    margin-top: auto;
+}
+
+.norm-card-footer span {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .norm-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .norm-number {
+        font-size: 3rem;
+    }
+
+    .norm-card-label {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .norm-card-header {
+        padding: 15px 15px 0 15px;
+    }
+
+    .norm-card-value {
+        padding: 12px 15px;
+    }
+
+    .norm-card-desc {
+        padding: 0 15px;
+    }
+
+    .norm-card-footer {
+        padding: 10px 15px;
+    }
+
+    .norm-number {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* ========== ШАБЛОН АНКЕТ ========== */
+
+.template-copy-all {
+    text-align: center;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.template-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    color: #bbb;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.template-btn:hover {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+.template-btn:active {
+    background: #111;
+    color: #ddd;
+}
+
+.template-btn--all {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    border-color: #555;
+}
+
+.template-btn-icon {
+    font-size: 0.9rem;
+}
+
+.template-copy-feedback {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    min-height: 18px;
+    transition: 0.3s;
+}
+
+.template-copy-feedback.success {
+    color: #7a9;
+}
+
+/* Секция шаблона */
+.template-section {
+    margin: 25px 0;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+}
+
+.template-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.01);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.template-section-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.1rem;
+    color: #ddd;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.template-note {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+    border-bottom: 1px solid #1f1f1f;
+    background: rgba(255,255,255,0.005);
+}
+
+.template-content {
+    padding: 15px 16px;
+}
+
+.template-content pre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #bbb;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .template-section-header {
+        padding: 10px 12px;
+    }
+
+    .template-section-title {
+        font-size: 1rem;
+    }
+
+    .template-content {
+        padding: 12px;
+    }
+
+    .template-content pre {
+        font-size: 0.95rem;
+    }
+
+    .template-btn {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .template-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .template-btn--all {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* ========== ЛЕГЕНДА РОЛЕЙ ========== */
+
+.roles-legend {
+    text-align: center;
+    margin: 20px 0 25px 0;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+    background: rgba(255,255,255,0.006);
+}
+
+.roles-legend-title {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.roles-legend-items {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.roles-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+.roles-legend-item .status {
+    width: 20px;
+    height: 20px;
+}
+
+.roles-legend-note {
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Счётчик ролей */
+.roles-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.roles-stat {
+    text-align: center;
+    min-width: 80px;
+}
+
+.roles-stat-num {
+    display: block;
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: #ddd;
+    letter-spacing: 2px;
+}
+
+.roles-stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* Адаптация */
+@media screen and (max-width: 768px) {
+    .roles-legend-items {
+        gap: 15px;
+    }
+
+    .roles-legend-item {
+        font-size: 0.85rem;
+    }
+
+    .roles-stats {
+        gap: 20px;
+    }
+
+    .roles-stat-num {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .roles-legend {
+        padding: 15px;
+    }
+
+    .roles-legend-items {
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .roles-stats {
+        gap: 15px;
     }
 }

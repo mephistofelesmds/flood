@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Черти | Правила</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+    <title>Черти | Шаблон анкет</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,10 +24,10 @@
 
     <nav>
         <a href="index.html">Админ состав</a>
-        <a href="rules.html" class="active">Правила</a>
+        <a href="rules.html">Правила</a>
         <a href="norm.html">Норма</a>
         <a href="roles.html">Роли</a>
-        <a href="templates.html">Шаблон анкет</a>
+        <a href="templates.html" class="active">Шаблон анкет</a>
         <a href="lore.html">Лор</a>
         <a href="world.html">О мире</a>
         <a href="addition.html">Дополнение</a>
@@ -35,20 +35,194 @@
 
     <div class="content-area">
         <div class="content-card">
-            <h2>Правила Поведения</h2>
             
-            <div class="placeholder-text">*тут текст*</div>
-            
-            <div class="img-wrapper">
-                <!-- Сюда вставь ссылку на картинку из папки images -->
-                <!-- <img src="images/tvoia_kartinka.jpg"> -->
-                <div style="padding:20px; border:1px dashed #999; color:#999;">*тут картинка*</div>
+            <!-- Заголовок -->
+            <div class="world-header">
+                <div class="world-symbol">◈</div>
+                <h1>Шаблон анкеты</h1>
+                <div class="world-divider"></div>
             </div>
-            
-            <div class="placeholder-text">*тут еще текст*</div>
+
+            <!-- Кнопка скопировать всё -->
+            <div class="template-copy-all">
+                <button class="template-btn template-btn--all" onclick="copyAllTemplate()">
+                    Скопировать весь шаблон
+                </button>
+                <span class="template-copy-feedback" id="copyAllFeedback"></span>
+            </div>
+
+            <!-- Основное -->
+            <div class="template-section" id="section-main">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Основное
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-main')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Имя:
+Возраст:
+Пол:
+Группа: Зеркальный / АльтЗеркальный / Безликий
+Город проживания: Кайгэн / Сидзури / Нагисо / Кадзэха / Роэн / другое
+Род деятельности:</pre>
+                </div>
+            </div>
+
+            <!-- Внешность -->
+            <div class="template-section" id="section-appearance">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Внешность
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-appearance')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Рост:
+Телосложение:
+Цвет волос:
+Цвет глаз:
+Особые приметы: шрамы, татуировки, родинки, необычные черты
+Стиль одежды:</pre>
+                </div>
+            </div>
+
+            <!-- Характер -->
+            <div class="template-section" id="section-character">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Характер
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-character')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Основные черты: (2-4 слова)
+Привычки и манеры:
+Страхи:
+Сильные стороны:
+Слабые стороны:
+Отношение к другим группам:
+- Зеркальные:
+- АльтЗеркальные:
+- Безликие:</pre>
+                </div>
+            </div>
+
+            <!-- Способность -->
+            <div class="template-section" id="section-ability">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Способность
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-ability')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-note">
+                    Раздел только для Зеркальных и АльтЗеркальных. Безликие удаляют.
+                </div>
+                <div class="template-content">
+<pre>Имя способности:
+
+Внешность способности:
+- Возраст на вид:
+- Пол:
+- Рост:
+- Телосложение:
+- Цвет волос:
+- Цвет глаз:
+- Особые приметы:
+- Стиль одежды:
+
+Характер способности:
+- Основные черты:
+- Привычки и манеры:
+- Отношение к хозяину:
+- Отношение к другим способностям:
+
+Тип сходства с хозяином:
+- Внешность: похожа / не похожа (в чём различие)
+- Характер: похож / не похож (в чём различие)
+- Судьба: похожа / не похожа (в чём различие)
+
+Способность: (название и описание того, что она делает)
+
+Режимы:
+- Активный: (как выглядит и действует, когда снаружи)
+- Спящий: (как работает внутри хозяина)
+
+Ограничения и цена: (чего не может, сколько держится, есть ли побочные эффекты)</pre>
+                </div>
+            </div>
+
+            <!-- Связь -->
+            <div class="template-section" id="section-bond">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Связь
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-bond')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Как появилась способность: возраст, обстоятельства, первая встреча
+Текущие отношения со способностью: доверие / напряжение / конфликт / гармония / другое
+Как хозяин зовёт способность: (имя, прозвище, жест, мысленно)
+Как способность зовёт хозяина: (имя, прозвище, обращение)</pre>
+                </div>
+            </div>
+
+            <!-- Биография -->
+            <div class="template-section" id="section-bio">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Биография
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-bio')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Происхождение: где родился, какая семья, есть ли эсперы среди родственников
+Прошлое: ключевые события, повлиявшие на персонажа
+Настоящее: чем живёт сейчас, какие цели, какие проблемы</pre>
+                </div>
+            </div>
+
+            <!-- Дополнительно -->
+            <div class="template-section" id="section-extra">
+                <div class="template-section-header">
+                    <h2 class="template-section-title">
+                        Дополнительно
+                    </h2>
+                    <button class="template-btn" onclick="copySection('section-extra')">
+                        Скопировать
+                    </button>
+                </div>
+                <div class="template-content">
+<pre>Тема/мелодия:
+Интересные факты:
+Связи с другими персонажами: (заполняется по ходу игры)</pre>
+                </div>
+            </div>
+
+            <!-- Футер -->
+            <div class="world-footer">
+                <div class="world-divider"></div>
+                <div class="world-symbol">◈</div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

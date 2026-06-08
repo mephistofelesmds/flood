@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Черти | Правила</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+    <title>Черти | Норма</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,8 +24,8 @@
 
     <nav>
         <a href="index.html">Админ состав</a>
-        <a href="rules.html" class="active">Правила</a>
-        <a href="norm.html">Норма</a>
+        <a href="rules.html">Правила</a>
+        <a href="norm.html" class="active">Норма</a>
         <a href="roles.html">Роли</a>
         <a href="templates.html">Шаблон анкет</a>
         <a href="lore.html">Лор</a>
@@ -35,20 +35,77 @@
 
     <div class="content-area">
         <div class="content-card">
-            <h2>Правила Поведения</h2>
             
-            <div class="placeholder-text">*тут текст*</div>
-            
-            <div class="img-wrapper">
-                <!-- Сюда вставь ссылку на картинку из папки images -->
-                <!-- <img src="images/tvoia_kartinka.jpg"> -->
-                <div style="padding:20px; border:1px dashed #999; color:#999;">*тут картинка*</div>
+            <!-- Заголовок -->
+            <div class="world-header">
+                <div class="world-symbol">◈</div>
+                <h1>Норма активности</h1>
+                <div class="world-divider"></div>
             </div>
-            
-            <div class="placeholder-text">*тут еще текст*</div>
+
+            <!-- Пояснение -->
+
+            <!-- Карточки норм -->
+            <div class="norm-cards">
+                
+                <!-- Флуд -->
+                <div class="norm-card">
+                    <div class="norm-card-icon">☙</div>
+                    <div class="norm-card-header">
+                        <div class="norm-card-label">Флуд</div>
+                        <div class="norm-card-period">за 7 дней</div>
+                    </div>
+                    <div class="norm-card-value">
+                        <span class="norm-number">85</span>
+                        <span class="norm-unit">сообщений</span>
+                    </div>
+                    <div class="norm-card-desc">
+                        <p>Минимальное количество сообщений в общем чате за неделю.</p>
+                    </div>
+                    <div class="norm-card-footer">
+                        <span>Если не набирается — предупреждение</span>
+                    </div>
+                </div>
+
+                <!-- Ролевая -->
+                <div class="norm-card">
+                    <div class="norm-card-icon">☙</div>
+                    <div class="norm-card-header">
+                        <div class="norm-card-label">Ролевая</div>
+                        <div class="norm-card-period">раз в 10 дней</div>
+                    </div>
+                    <div class="norm-card-value">
+                        <span class="norm-number">1</span>
+                        <span class="norm-unit">пост</span>
+                    </div>
+                    <div class="norm-card-desc">
+                        <p>Минимум один ролевой пост раз в десять дней. Правило действует только на тех, кто участвует в ролевой игре.</p>
+                    </div>
+                    <div class="norm-card-footer">
+                        <span>Если вы не в ролевой — правило вас не касается</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Примечание -->
+            <div class="world-section--closing" style="margin-top: 30px;">
+                <div class="lore-section-icon">❦</div>
+                <p class="lore-final">
+                    Мы ценим каждого участника, но чат живёт только когда вы активны.
+                </p>
+            </div>
+
+            <!-- Футер -->
+            <div class="world-footer">
+                <div class="world-divider"></div>
+                <div class="world-symbol">◈</div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Черти | Правила</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+    <title>Черти | Роли</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,9 +24,9 @@
 
     <nav>
         <a href="index.html">Админ состав</a>
-        <a href="rules.html" class="active">Правила</a>
+        <a href="rules.html">Правила</a>
         <a href="norm.html">Норма</a>
-        <a href="roles.html">Роли</a>
+        <a href="roles.html" class="active">Роли</a>
         <a href="templates.html">Шаблон анкет</a>
         <a href="lore.html">Лор</a>
         <a href="world.html">О мире</a>
@@ -35,20 +35,239 @@
 
     <div class="content-area">
         <div class="content-card">
-            <h2>Правила Поведения</h2>
             
-            <div class="placeholder-text">*тут текст*</div>
-            
-            <div class="img-wrapper">
-                <!-- Сюда вставь ссылку на картинку из папки images -->
-                <!-- <img src="images/tvoia_kartinka.jpg"> -->
-                <div style="padding:20px; border:1px dashed #999; color:#999;">*тут картинка*</div>
+            <!-- Заголовок -->
+            <div class="world-header">
+                <div class="world-symbol">◈</div>
+                <h1>Роли</h1>
+                <div class="world-divider"></div>
             </div>
-            
-            <div class="placeholder-text">*тут еще текст*</div>
+
+            <!-- Легенда -->
+            <div class="roles-legend">
+                <div class="roles-legend-title">Обозначения</div>
+                <div class="roles-legend-items">
+                    <div class="roles-legend-item">
+                        <i class="status status-free"></i>
+                        <span>свободная роль</span>
+                    </div>
+                    <div class="roles-legend-item">
+                        <i class="status status-taken"></i>
+                        <span>занятая роль</span>
+                    </div>
+                    <div class="roles-legend-item">
+                        <i class="status status-reserved"></i>
+                        <span>бронь роли</span>
+                    </div>
+                    <div class="roles-legend-item">
+                        <i class="status status-searching"></i>
+                        <span>ищем роль</span>
+                    </div>
+                </div>
+                <div class="roles-legend-note">₊ бронь держится 3 дня</div>
+            </div>
+
+            <!-- Вооружённое детективное агентство -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Вооружённое детективное агентство
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Фукудзава Юкичи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Накадзима Ацуши <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Дазай Осаму <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Куникида Доппо <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ранпо Эдогава <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Йосано Акико <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Танидзаки Дзюнъитиро <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Миядзава Кэндзи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Танидзаки Наоми <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Харуно Кирако <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Катай Таяма <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Идзуми Кёка <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Тагучи Рокузо <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Портовая мафия -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Портовая мафия
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Мори Огай <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Элис <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Накахара Чюя <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Одзаки Коё <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Хироцу Рюро <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Акутагава Гин <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Мотодзиро Кадзи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Акутагава Рюноскэ <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Хигути Итиё <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Юмэно Кюсаку <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ода Сакуноскэ <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Эйс <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Артур Рембо <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Верлен Поль <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Альбатрос <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Док <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Крысы мёртвого дома -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Крысы мёртвого дома
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Фёдор Достоевский <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Николай Гоголь <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сигма <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Брэм Стокер <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Александр Пушкин <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Иван Гончаров <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Огури Муситаро <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Гильдия -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Гильдия
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Фицджеральд Фрэнсис Скотт <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Луиза Мэй Олкотт <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Люси Мод Монтгомери <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Говард Филлипс Лавкрафт <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Маргарет Митчелл <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Натаниэль Готорн <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Эдгар Аллан По <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Марк Твен <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Герман Мелвилл <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Джон Стейнбек <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Джеймс Л. <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Ищейки / Особый отдел -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Ищейки / Особый отдел
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Оти Фукути <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Тэруко Оокура <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сайгику Дзёно <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Тэттэ Суэхиро <i class="status status-taken"></i></span>
+                    <span class="role-item">┊ Татихара Митидзо <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Смерть небожителей -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Смерть небожителей
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Камуи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Брэм Стокер <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Николай Гоголь <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сигма <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Орден часовой башни -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Орден часовой башни
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Агата Кристи <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Мимик -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Мимик
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Андре Жид <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Овцы -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Овцы
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Сирасэ <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Юань <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сёго <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Акира <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Трансценденты -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Трансценденты
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Артур Рембо <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Поль Верлен <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Иоганн Гёте <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Уильям Шекспир <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Виктор Гюго <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- V и правительство -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> V и правительство
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Митамура <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Анго Сакагути <i class="status status-free"></i></span>
+                    <span class="role-item">┊ М. Цудзимура <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ятимо Муракосо <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сантока Танэда <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Такуити Аоки <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сугимото <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ямагава <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ясуи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Тонан <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Эсперы и гражданские / прочие -->
+            <div class="world-section">
+                <h2 class="world-section-title">
+                    <span class="world-section-icon">🤍</span> Эсперы и гражданские / прочие
+                </h2>
+                <div class="roles-list">
+                    <span class="role-item">┊ Сосэки Нацумэ <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Герберт Уэллс <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Юкито Аяцудзи <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Сибусава Тацухико <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Ая Кода <i class="status status-free"></i></span>
+                    <span class="role-item">┊ Мать Кёки <i class="status status-free"></i></span>
+                </div>
+            </div>
+
+            <!-- Футер -->
+            <div class="world-footer">
+                <div class="world-divider"></div>
+                <div class="world-symbol">◈</div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

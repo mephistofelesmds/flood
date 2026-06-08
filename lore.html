@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Черти | Правила</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+    <title>Черти | Лор</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,31 +24,231 @@
 
     <nav>
         <a href="index.html">Админ состав</a>
-        <a href="rules.html" class="active">Правила</a>
+        <a href="rules.html">Правила</a>
         <a href="norm.html">Норма</a>
         <a href="roles.html">Роли</a>
         <a href="templates.html">Шаблон анкет</a>
-        <a href="lore.html">Лор</a>
+        <a href="lore.html" class="active">Лор</a>
         <a href="world.html">О мире</a>
         <a href="addition.html">Дополнение</a>
     </nav>
 
     <div class="content-area">
         <div class="content-card">
-            <h2>Правила Поведения</h2>
             
-            <div class="placeholder-text">*тут текст*</div>
-            
-            <div class="img-wrapper">
-                <!-- Сюда вставь ссылку на картинку из папки images -->
-                <!-- <img src="images/tvoia_kartinka.jpg"> -->
-                <div style="padding:20px; border:1px dashed #999; color:#999;">*тут картинка*</div>
+            <!-- Заголовок -->
+            <div class="lore-header">
+                <div class="lore-symbol">◈</div>
+                <h1>Куроха</h1>
+                <div class="lore-subtitle">страна эсперов</div>
+                <div class="lore-divider"></div>
             </div>
-            
-            <div class="placeholder-text">*тут еще текст*</div>
+
+            <!-- Вступление -->
+            <div class="lore-section">
+                <div class="lore-section-icon">☙</div>
+                <p>
+                    У каждого эспера есть <span class="lore-highlight">способность</span> — живое существо со своим телом, характером и волей. Способность привязана к хозяину связью, которую нельзя разорвать. У способностей есть свой мир — <span class="lore-highlight">Астрал</span>. Только они могут туда попасть. Хозяин не может войти в Астрал никаким способом.
+                </p>
+                <p>
+                    Когда способность в Астрале — в реальном мире она находится в спящем режиме внутри хозяина. Когда хозяин зовёт — приходит.
+                </p>
+            </div>
+
+            <!-- Группы эсперов — заголовок -->
+            <div class="lore-section-divider">
+                <span>☽</span> Группы эсперов <span>☽</span>
+            </div>
+
+            <div class="lore-section-intro">
+                <p>Деление не по типу сходства, а по тому, кем является способность относительно хозяина. Группы не всегда враждуют, но напряжение есть.</p>
+            </div>
+
+            <!-- Зеркальные -->
+            <div class="lore-group">
+                <div class="lore-group-header">
+                    <div class="lore-group-num">I</div>
+                    <div class="lore-group-name">Зеркальные</div>
+                </div>
+                <div class="lore-group-body">
+                    <p>Способность похожа на хозяина внешне — тот же пол, возраст, черты лица. Но характер другой. Обычно более резкий, смелый, жёсткий. Способность проявляет то, что хозяин в себе давит.</p>
+                    
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Их позиция:</div>
+                        <p>«Мы — настоящие эсперы. Способность и хозяин должны быть одним целым. Единый образ, единая сила. Только так связь крепка».</p>
+                    </div>
+
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Взгляд на других:</div>
+                        <ul class="lore-view-list">
+                            <li><span>АльтЗеркальные</span> — не понимают. Как можно доверять тому, кто выглядит иначе? Это чуждо.</li>
+                            <li><span>Безликие</span> — жалеют или презирают. Они потеряли связь, они сломлены, им не место среди живых.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- АльтЗеркальные -->
+            <div class="lore-group">
+                <div class="lore-group-header">
+                    <div class="lore-group-num">II</div>
+                    <div class="lore-group-name">АльтЗеркальные</div>
+                </div>
+                <div class="lore-group-body">
+                    <p>Способность не похожа на хозяина внешне. Другой пол, возраст, внешность. Но схожа характером, привычками, манерой речи или судьбой. Часто передаются по наследству.</p>
+                    
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Их позиция:</div>
+                        <p>«Связь глубже внешности. Важно не как ты выглядишь, а кто ты внутри. Наши способности — наследие и мудрость поколений».</p>
+                    </div>
+
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Взгляд на других:</div>
+                        <ul class="lore-view-list">
+                            <li><span>Зеркальные</span> — считают поверхностными. Они зациклены на внешнем сходстве и не видят сути.</li>
+                            <li><span>Безликие</span> — сочувствуют. Потерять способность страшно, но иногда это заслуженно.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Безликие -->
+            <div class="lore-group">
+                <div class="lore-group-header">
+                    <div class="lore-group-num">III</div>
+                    <div class="lore-group-name">Безликие</div>
+                </div>
+                <div class="lore-group-body">
+                    <p>Способность погибла или исчезла. Хозяин остался один. Связи больше нет.</p>
+                    
+                    <div class="lore-subtypes">
+                        <div class="lore-subtype">
+                            <div class="lore-subtype-name">Сломленные</div>
+                            <p>Те, чья способность умерла недавно. Подавлены, растеряны, ищут способ жить дальше.</p>
+                        </div>
+                        <div class="lore-subtype">
+                            <div class="lore-subtype-name">Пустые</div>
+                            <p>Те, кто без способности давно. Привыкли. Стали жёстче. Некоторые считают, что без способности даже лучше — никто не лезет в голову.</p>
+                        </div>
+                    </div>
+
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Их позиция:</div>
+                        <p>«Мы — те, кто выжил. Способность — не главное. Человек сильнее».</p>
+                    </div>
+
+                    <div class="lore-stance">
+                        <div class="lore-stance-label">Взгляд на других:</div>
+                        <ul class="lore-view-list">
+                            <li><span>Зеркальные и АльтЗеркальные</span> — зависть или презрение. У них всё ещё есть связь, они не знают, что значит потерять часть себя.</li>
+                            <li><span>Другие Безликие</span> — по-разному. Сломленные ищут поддержки у Пустых. Пустые иногда помогают, иногда отталкивают.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Таблица отношений -->
+            <div class="lore-section-divider">
+                <span>☽</span> Отношения между группами <span>☽</span>
+            </div>
+
+            <div class="lore-table-wrapper">
+                <table class="lore-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Зеркальные</th>
+                            <th>АльтЗеркальные</th>
+                            <th>Безликие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="lore-table-label">Зеркальные</td>
+                            <td>—</td>
+                            <td>Считают чуждыми, не доверяют</td>
+                            <td>Жалеют или презирают</td>
+                        </tr>
+                        <tr>
+                            <td class="lore-table-label">АльтЗеркальные</td>
+                            <td>Считают поверхностными</td>
+                            <td>—</td>
+                            <td>Сочувствуют или осуждают</td>
+                        </tr>
+                        <tr>
+                            <td class="lore-table-label">Безликие</td>
+                            <td>Завидуют или ненавидят</td>
+                            <td>Завидуют или ненавидят</td>
+                            <td>Поддерживают или презирают друг друга</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Конфликты -->
+            <div class="lore-section-divider">
+                <span>☽</span> Конфликты <span>☽</span>
+            </div>
+
+            <div class="lore-conflicts">
+                <div class="lore-conflict">
+                    <div class="lore-conflict-title">Зеркальные против АльтЗеркальных</div>
+                    <p>Споры о «правильной» связи. Зеркальные считают, что способность должна быть отражением. АльтЗеркальные — что важнее внутреннее родство. На бытовом уровне это взаимные насмешки, отказ в партнёрстве, иногда драки.</p>
+                </div>
+
+                <div class="lore-conflict">
+                    <div class="lore-conflict-title">Обе группы против Безликих</div>
+                    <p>Безликие напоминают о том, что связь можно потерять. Это пугает. Их сторонятся, не берут на работу, не пускают в общие заведения. Безликие в ответ держатся особняком или огрызаются.</p>
+                </div>
+
+                <div class="lore-conflict">
+                    <div class="lore-conflict-title">Безликие против обеих групп</div>
+                    <p>Зависть перерастает в ненависть. Почему у них есть способность, а у меня нет? Почему они жалуются на свои связи, когда я всё бы отдал за такую?</p>
+                </div>
+
+                <div class="lore-conflict">
+                    <div class="lore-conflict-title">Внутри Безликих</div>
+                    <p>Пустые иногда презирают Сломленных за слабость. Сломленные боятся Пустых — не хотят стать такими же холодными.</p>
+                </div>
+            </div>
+
+            <!-- Как влияет на сюжет -->
+            <div class="lore-section-divider">
+                <span>☽</span> Как это влияет на сюжет <span>☽</span>
+            </div>
+
+            <div class="lore-plot-points">
+                <p>Мир не воюет глобально. Но напряжение есть всегда.</p>
+                <ul>
+                    <li>Зеркальный эспер отказывается работать с АльтЗеркальным. Их способности в Астрале тоже враждуют.</li>
+                    <li>Безликого не пускают в заведение — Зеркальные считают его «неполноценным».</li>
+                    <li>АльтЗеркальный и Зеркальный вынуждены сотрудничать. Искры летят.</li>
+                    <li>Безликий спасает эспера со способностью — и тот не знает, как реагировать.</li>
+                    <li>Пустой учит Сломленного жить без способности. Жёстко, грубо, но действенно.</li>
+                    <li>Три эспера из разных групп оказываются в одной передряге. Приходится разбираться вместе.</li>
+                </ul>
+            </div>
+
+            <!-- Сюжет кратко -->
+            <div class="lore-section--closing">
+                <div class="lore-section-icon">❦</div>
+                <p>
+                    В Курохе эсперы поделены на Зеркальных, АльтЗеркальных и Безликих. Группы не воюют открыто, но напряжение между ними постоянно. Зеркальные и АльтЗеркальные спорят о природе связи. Безликих сторонятся и притесняют. Конфликты вспыхивают на бытовом уровне — работа, улица, общие знакомые.
+                </p>
+                <p class="lore-final">
+                    Персонажи живут в этом мире. Они могут принадлежать к разным группам. Их личные истории строятся вокруг связи со способностью, вражды с другими группами и попыток найти общий язык с теми, кто не похож на них.
+                </p>
+            </div>
+
+            <div class="lore-footer">
+                <div class="lore-divider"></div>
+                <div class="lore-symbol">◈</div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
