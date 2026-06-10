@@ -44,70 +44,66 @@
 
             <div class="template-copy-all">
                 <button class="template-btn template-btn--all" onclick="copyAllTemplate()">
-                    Скопировать весь шаблон
+                    Скопировать обе анкеты
                 </button>
                 <span class="template-copy-feedback" id="copyAllFeedback"></span>
             </div>
 
-            <!-- Основное -->
-            <div class="template-section" id="section-main">
+            <!-- ===== АНКЕТА ПЕРСОНАЖА ===== -->
+            <div class="template-section" id="section-character-full">
                 <div class="template-section-header">
-                    <h2 class="template-section-title">Основное</h2>
-                    <button class="template-btn" onclick="copySection('section-main')">Скопировать</button>
+                    <h2 class="template-section-title">Анкета персонажа</h2>
+                    <button class="template-btn" onclick="copySection('section-character-full')">Скопировать</button>
                 </div>
                 <div class="template-content">
 <pre>Имя:
 Возраст:
 Пол:
 Группа: Зеркальный / АльтЗеркальный / Безликий
-Город проживания: Кайгэн / Сидзури / Нагисо / Кадзэха / Роэн / другое
-Род деятельности:</pre>
+Город: Кайгэн / Сидзури / Нагисо / Кадзэха / Роэн / другое
+Род деятельности:
+
+Внешность:
+- Рост:
+- Телосложение:
+- Цвет волос:
+- Цвет глаз:
+- Особые приметы:
+- Стиль одежды:
+
+Характер:
+- Основные черты:
+- Привычки и манеры:
+- Страхи:
+- Сильные стороны:
+- Слабые стороны:
+
+Отношение к группам:
+- Зеркальные:
+- АльтЗеркальные:
+- Безликие:
+
+Биография:
+- Происхождение:
+- Прошлое:
+- Настоящее:
+
+Дополнительно:
+- Тема/мелодия:
+- Факты:
+- Связи:</pre>
                 </div>
             </div>
 
-            <!-- Внешность -->
-            <div class="template-section" id="section-appearance">
+            <!-- ===== АНКЕТА СПОСОБНОСТИ ===== -->
+            <div class="template-section" id="section-ability-full">
                 <div class="template-section-header">
-                    <h2 class="template-section-title">Внешность</h2>
-                    <button class="template-btn" onclick="copySection('section-appearance')">Скопировать</button>
+                    <h2 class="template-section-title">Анкета способности</h2>
+                    <button class="template-btn" onclick="copySection('section-ability-full')">Скопировать</button>
                 </div>
+                <div class="template-note">Только для Зеркальных и АльтЗеркальных. Безликие удаляют.</div>
                 <div class="template-content">
-<pre>Рост:
-Телосложение:
-Цвет волос:
-Цвет глаз:
-Особые приметы:
-Стиль одежды:</pre>
-                </div>
-            </div>
-
-            <!-- Характер -->
-            <div class="template-section" id="section-character">
-                <div class="template-section-header">
-                    <h2 class="template-section-title">Характер</h2>
-                    <button class="template-btn" onclick="copySection('section-character')">Скопировать</button>
-                </div>
-                <div class="template-content">
-<pre>Основные черты:
-Привычки и манеры:
-Страхи:
-Сильные стороны:
-Слабые стороны:
-Отношение к Зеркальным:
-Отношение к АльтЗеркальным:
-Отношение к Безликим:</pre>
-                </div>
-            </div>
-
-            <!-- Способность -->
-            <div class="template-section" id="section-ability">
-                <div class="template-section-header">
-                    <h2 class="template-section-title">Способность</h2>
-                    <button class="template-btn" onclick="copySection('section-ability')">Скопировать</button>
-                </div>
-                <div class="template-note">Безликие удаляют этот раздел.</div>
-                <div class="template-content">
-<pre>Имя способности:
+<pre>Имя:
 
 Внешность:
 - Возраст на вид:
@@ -121,62 +117,19 @@
 
 Характер:
 - Основные черты:
-- Привычки:
+- Привычки и манеры:
 - Отношение к хозяину:
-- Отношение к другим способностям:
 
-Сходство с хозяином:
-- Внешность: похожа / не похожа
-- Характер: похож / не похож
-- Судьба: похожа / не похожа
+Способность: (название и описание)
 
-Что делает: (описание)
+Разновидность способностей (силы):
 
-Режимы:
-- Активный:
-- Спящий:
+Ограничения:
 
-Ограничения:</pre>
-                </div>
-            </div>
-
-            <!-- Связь -->
-            <div class="template-section" id="section-bond">
-                <div class="template-section-header">
-                    <h2 class="template-section-title">Связь</h2>
-                    <button class="template-btn" onclick="copySection('section-bond')">Скопировать</button>
-                </div>
-                <div class="template-content">
-<pre>Как появилась способность:
-Текущие отношения:
-Как хозяин зовёт способность:
-Как способность зовёт хозяина:</pre>
-                </div>
-            </div>
-
-            <!-- Биография -->
-            <div class="template-section" id="section-bio">
-                <div class="template-section-header">
-                    <h2 class="template-section-title">Биография</h2>
-                    <button class="template-btn" onclick="copySection('section-bio')">Скопировать</button>
-                </div>
-                <div class="template-content">
-<pre>Происхождение:
-Прошлое:
-Настоящее:</pre>
-                </div>
-            </div>
-
-            <!-- Дополнительно -->
-            <div class="template-section" id="section-extra">
-                <div class="template-section-header">
-                    <h2 class="template-section-title">Дополнительно</h2>
-                    <button class="template-btn" onclick="copySection('section-extra')">Скопировать</button>
-                </div>
-                <div class="template-content">
-<pre>Тема/мелодия:
-Факты:
-Связи с персонажами:</pre>
+Тип сходства:
+- Внешность:
+- Характер:
+- Судьба:</pre>
                 </div>
             </div>
 
